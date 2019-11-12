@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<div class="home">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+
+  {{ content }}
+
+  {%- if site.posts.size > 0 -%}
+  <div
+    class="section section-nucleo-icons"
+  >
+    <div class="row">
+      {%- for post in site.posts -%}
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">
+              <a href="{{ post.url | relative_url }}" class="h3-seo">
+                <h3>{{ post.title | escape }}</h3>
+              </a>
+              
+              <h5> {{ post.summary | escape }} </h5>
+              
+              <div class="row">                
+                <div class="col-md-3 col-lg-3">
+                  {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                  <span class="post-meta">{{ post.date | date: date_format }}</span>
+                </div>                                
+              </div>
+                            
+            </div>
+          </div>
+        </div>
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+    <p class="feed-subscribe">
+      <a href="{{ 'feed.xml' | relative_url }}">
+        <i class="fa fa-rss-square"></i> <span>Subscribe</span>
+      </a>
+    </p>
+  {%- endif -%}
+
+</div>
