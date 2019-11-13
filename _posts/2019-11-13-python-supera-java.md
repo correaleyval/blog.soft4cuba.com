@@ -1,5 +1,5 @@
 ---
-title: "Python supera a Java por primera"
+title: "Python supera a Java por primera vez"
 author: "Luis Correa"
 layout: post
 category: desarrollo
